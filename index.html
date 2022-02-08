@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de citas</title>
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <section class="contenedor">
+        <div class="contenedor-formulario">
+            <form id="formulario" class="formulario">
+                <div class="formulario__campo">
+                    <h4>Nombre Mascota:</h4>
+                    <div>
+                        <input type="text" id="mascota" name="mascota" placeholder="Nombre Mascota">
+                    </div>
+                </div>
+                <div class="formulario__campo">
+                    <h4>Propietario:</h4>
+                    <div>
+                        <input type="text" id="propietario" name="propietario" placeholder="Nombre Dueño de la Mascota">
+                    </div>
+                </div>
+                <div class="formulario__campo">
+                    <h4>Teléfono:</h4>
+                    <div>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Número de Teléfono">
+                    </div>
+                </div>
+                <div class="formulario__campo">
+                    <h4>Fecha:</h4>
+                    <div>
+                        <input type="date" id="fecha" name="fecha">
+                    </div>
+                </div>
+
+                <div class="formulario__campo">
+                    <h4>Hora:</h4>
+                    <div>
+                        <input type="time" id="hora" name="hora">
+                    </div>
+                </div>
+
+                <div class="formulario__campo">
+                    <h4>Sintomas:</h4>
+                    <div>
+                        <textarea id="sintomas" name="sintomas"></textarea>
+                    </div>
+                </div>
+                <div>
+                        <button class="btn-submit" type="submit">Crear Cita</button>
+                </div>
+            </form>
+        </div>
+        <div id="contenedorCitas" class="contenedorCitas">
+        </div>
+    </section>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
