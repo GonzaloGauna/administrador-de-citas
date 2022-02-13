@@ -7,6 +7,7 @@ html {
     margin: 0%;
     padding: 0%;
     font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
 }
 *,*::before,*::after {
     box-sizing: inherit;
@@ -24,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
     overflow-x: hidden;
 }
 .contenedor {
@@ -32,10 +33,14 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 5rem;
+    margin: 16rem 0;
 }
 .contenedor-formulario, .contenedorCitas {
     background-color: var(--form-bg);
     padding: 5% 5%;
+}
+.contenedor-formulario {
+    max-height: 627px;
 }
 .formulario {
     display: flex;
@@ -63,7 +68,6 @@ body {
     margin-top: 3rem;
     font-size: 1.8rem;
     padding: 1rem 2rem;
-    transition: all 0.3s 0.1s ease-out;
     background-color: var(--tittles);
     border: none;
     color: rgb(34, 31, 31);
@@ -71,6 +75,47 @@ body {
 .formulario .btn-submit:hover {
     letter-spacing: .15rem;
     cursor: pointer;
+}
+.contenedorCitas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
+.contenedorCitas .cita {
+    border: 1px solid #adb5bd;
+    width: 100%;
+    padding: 0 5%;
+    margin-bottom: 2rem;
+}
+.contenedorCitas .cita-tittle {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: var(--tittles) solid underline;
+}
+.contenedorCitas .cita-parrafo {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #212529;
+}
+.contenedorCitas .cita-parrafo span {
+    font-weight: 700;
+    width: max-content;
+    text-decoration: var(--tittles) solid underline;
+}
+/* Alertas */
+.mensajeAlerta {
+    width: 90%;
+    font-size: 1.5rem;
+    background-color: #ff6b6b;
+    color: #212529;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem 0;
+    transition: all 0.4s cubic-bezier(.43,1.1,.62,1.08);
 }
 
 @media(max-width: 1400px){
@@ -85,15 +130,40 @@ body {
         grid-template-rows: 1fr 1fr;
         row-gap: 5rem;
         width: 60%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "formulario"
+            "citas";
+        grid-template: 
+        [row1-start] "formulario" 627px [row1-end]
+        [row2-start] "citas" auto [row2-end]
+        ;
     }
 }
 @media(max-width: 850px){
     .contenedor {
         width: 75%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "formulario"
+            "citas";
+        grid-template: 
+        [row1-start] "formulario" 627px [row1-end]
+        [row2-start] "citas" auto [row2-end]
+        ;
     }
 }
 @media(max-width: 600px){
     .contenedor {
         width: 90%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "formulario"
+            "citas";
+        grid-template: 
+        [row1-start] "formulario" 627px [row1-end]
+        [row2-start] "citas" auto [row2-end]
+        ;
     }
 }
+
