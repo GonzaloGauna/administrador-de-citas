@@ -11,6 +11,10 @@ html {
 }
 *,*::before,*::after {
     box-sizing: inherit;
+    -webkit-transition: all 0.5s 0s ease;
+    -moz-transition: all 0.5s 0s ease;
+    -o-transition: all 0.5s 0s ease;
+    transition: all 0.5s 0s ease;
 }
 :root {
     --gray-bg: #E3E3E3;
@@ -87,6 +91,7 @@ body {
     width: 100%;
     padding: 0 5%;
     margin-bottom: 2rem;
+    position: relative;
 }
 .contenedorCitas .cita-tittle {
     font-size: 2rem;
@@ -105,6 +110,22 @@ body {
     font-weight: 700;
     width: max-content;
     text-decoration: var(--tittles) solid underline;
+}
+/* botones eliminar y editar de las citas */
+.btnCita {
+    position: absolute;
+    border: none;
+    width: 3.5rem;
+    background-color: transparent;
+}
+.btnCita:hover {
+    cursor: pointer;
+}
+.btnEliminar {
+    top: 3%; left: 92%;
+}
+.btnEditar {
+    top: 3%; left: 85%;
 }
 /* Alertas */
 .mensajeAlerta {
@@ -164,6 +185,12 @@ body {
         [row1-start] "formulario" 627px [row1-end]
         [row2-start] "citas" auto [row2-end]
         ;
+    }
+    .btnEliminar {
+        top: 5%; left: 90%;
+    }
+    .btnEditar {
+        top: 5%; left: 80%;
     }
 }
 
